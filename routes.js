@@ -1,5 +1,7 @@
 const path = __dirname + "/public/";
 
+const servicesConstroller = require('./controller/servicesController.js');
+
 module.exports = function(app) {
     app.get("/", function(request, response) {
         response.sendFile(path + "index.html");
@@ -9,8 +11,7 @@ module.exports = function(app) {
         response.sendFile(path + "adicionar.html");
     });
     app.post("/cadastrar", function (request, response) {
-        console.log(request.body);
-        response.send("Cadastrado.");
+        servicesConstroller.cadastrar(request.body, response);
     });
     
     app.get("/consultar", function(request, response) {
