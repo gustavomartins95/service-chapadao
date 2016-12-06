@@ -1,0 +1,24 @@
+{
+  "name": "servicechapadao",
+  "version": "1.0.0",
+  "description": "Final Homework S.I. 6",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavomartins95/service-chapadao.git"
+  },
+  "author": "Gustavo Martins - Douglas Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavomartins95/service-chapadao/issues"
+  },
+  "homepage": "https://github.com/gustavomartins95/service-chapadao#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.12.0"
+  }
+}
