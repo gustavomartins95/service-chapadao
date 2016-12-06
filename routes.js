@@ -16,7 +16,11 @@ module.exports = function(app) {
     
     app.get("/consultar", function(request, response) {
         response.sendFile(path + "consultar.html");
-    });
+    });   
+     app.get("/consultar/:nome", function(request, response) {
+        const nome = request.params.nome;
+        console.log(nome);
+     });
 
     app.get("/success", function(request, response) {
         response.sendFile(path + "success.html");
