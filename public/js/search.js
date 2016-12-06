@@ -4,6 +4,9 @@
             method: "GET",
             url: "/consultar/" + search
         })
+            .done(services => {
+                console.log(services);
+            });
     };
 
     $("form").on("submit", event => {
