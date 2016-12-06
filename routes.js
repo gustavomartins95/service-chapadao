@@ -21,6 +21,10 @@ module.exports = function(app) {
         const nome = request.params.nome;
         servicesConstroller.filtrar(nome, response);
     });
+    app.get("/deletar/:id", function (request, response) {
+        const id = request.params.id;
+        servicesConstroller.deletar(id, response);
+    });
 
     app.get("/success", function(request, response) {
         response.sendFile(path + "success.html");
