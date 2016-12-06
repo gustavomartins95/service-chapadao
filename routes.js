@@ -17,4 +17,12 @@ module.exports = function(app) {
     app.get("/consultar", function(request, response) {
         response.sendFile(path + "consultar.html");
     });
+
+    app.get("/success", function(request, response) {
+        response.sendFile(path + "success.html");
+    });
+
+    app.get("/failed", function(request, response) {
+        response.sendFile(path + "failed.html");
+    });
 };
