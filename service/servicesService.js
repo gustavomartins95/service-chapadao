@@ -5,7 +5,7 @@ var servicesService = {
         connection.query('INSERT INTO `service` SET ?', [dados], function (err, result) {
             if (err) throw err;
 
-            callback(result.insertId);
+            callback(result.affectedRows);
         });
     }
 }
