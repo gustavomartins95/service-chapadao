@@ -20,6 +20,15 @@ var servicesConstroller = {
                 response.sendStatus(404);
             }
         });
+    },
+    deletar: function (id, response) {
+        servicesService.delete(id, function callback (id) {
+            if(id) {
+                response.redirect("/success");
+            } else {
+                response.redirect("/failed");
+            }
+        });
     }
 };
 
