@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Consultar</title>
+    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <h1 class="text-muted text-center">Autopeças Chapadão</h1>
+        <nav>
+            <ul class="nav nav-justified">
+                <li><a href="/">Home</a></li>
+                <li><a href="/adicionar">Adicionar</a></li>
+                <li class="active"><a href="/consultar">Consultar</a></li>
+                <li><a href="/relatorios">Relatórios</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <section class="sectionPages">
+        <div class="container-fluid">
+            <div class="row">
+                <form action="" method="POST">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <div class="input-group">
+                            <input type="hidden" name="search_param" value="all" id="search_param">         
+                            <input type="text" class="form-control" id="search" placeholder="A consulta é feita simultaneamente no nome, placa e modelo." autofocus>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Placa</th>
+                                    <th>Modelo</th>
+                                    <th>Forma de Pag.</th>
+                                    <th>Preço</th>
+                                    <th>Mão de Obra</th>
+                                    <th>Total</th>
+                                    <th>Data</th>
+                                    <th>Vencimento</th>
+                                    <th class='actions'>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableServices">
+                            </tbody>                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <p>&copy; 2016</p>
+    </footer>
+</div>
+
+</body>
+</html>
