@@ -7,6 +7,17 @@ var servicesService = {
 
             callback(result.affectedRows);
         });
+    },
+    filter: function (nome, callback) {
+        connection.query('SELECT *, DATE_FORMAT(`dataAtual`, "%d/%m/%Y") AS `dataAtual`, '
+                       + 'DATE_FORMAT(`dataDeVencimento`, "%d/%m/%Y") AS `dataDeVencimento` '
+                       + 'FROM service WHERE '
+                       + 'nome LIKE "%"?"%" OR placa LIKE "%"?"%" OR modelo LIKE "%"?"%" '
+                       + 'ORDER BY id', [nome, nome, nome], function (error, results) {
+            if (error) throw error;
+            
+            callback(results);
+        });
     }
 }
 
