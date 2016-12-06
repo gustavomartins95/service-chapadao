@@ -11,6 +11,15 @@ var servicesConstroller = {
                 response.redirect("/failed");
             }
         });
+    },
+    filtrar: function (nome, response) {
+        servicesService.filter(nome, function callback(results) {
+            if (results) {
+                response.status(200).send(results);
+            } else {
+                response.sendStatus(404);
+            }
+        });
     }
 };
 
