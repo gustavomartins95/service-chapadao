@@ -18,6 +18,13 @@ var servicesService = {
             
             callback(results);
         });
+    },
+    delete: function (id, callback) {
+        connection.query('DELETE FROM `service` WHERE id = ?', [id], function (error, results) {
+            if (error) throw error;
+            
+            callback(results.affectedRows);
+        });
     }
 }
 
