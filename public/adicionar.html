@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Adicionar</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <h1 class="text-muted text-center">Autopeças Chapadão</h1>
+        <nav>
+            <ul class="nav nav-justified">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/adicionar">Adicionar</a></li>
+                <li><a href="/consultar">Consultar</a></li>
+                <li><a href="/relatorios">Relatórios</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="sectionPages">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="formServicos" action="/cadastrar" method="POST">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="nome">Nome:</label>
+                                <input type="text" name="nome" class="form-control" autofocus>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="endereco">Endereço:</label>
+                                <input type="text" name="endereco" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="numero">Número:</label>
+                                <input type="number" min="0" name="numero" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" name="bairro" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" name="cidade" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="placa">Placa:</label>
+                                <input type="text" name="placa" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="modelo">Modelo:</label>
+                                <input type="text" name="modelo" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="ano">Ano:</label>
+                                <input type="number" min="0" name="ano" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="quilometragem">Quilometragem:</label>
+                                <input type="number" min="0" name="quilometragem" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="preco">Preço:</label>
+                                <input type="number" value="0.00" min="0" name="preco" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="maoDeObra">Mão de Obra:</label>
+                                <input type="number" value="0.00" min="0" name="maoDeObra" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="formasDePagamento">Formas de Pagamento:</label>
+                                <select name="formasDePagamento" class="form-control"> 
+                                    <option value="Á Vista">Á Vista</option> 
+                                    <option value="Boleto">Boleto</option>
+                                    <option value="Cartão">Cartão</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="prazoEmDias">Prazo em dias:</label>
+                                <input type="number" value="0" min="0" name="prazoEmDias" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="servicosProdutos">Serviços/Produtos:</label>
+                                <textarea class="form-control" name="servicosProdutos" rows="7" placeholder="Serviços prestados e produtos utilizados."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-lg" value="Salvar">
+                                <input type="reset" class="btn btn-warning btn-lg" value="Limpar">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <p>&copy; 2016</p>
+    </footer>
+</div>
+
+</body>
+</html>
