@@ -25,7 +25,42 @@ var servicesService = {
             
             callback(results.affectedRows);
         });
-    }
+    },
+    reports: function (option, callback) {
+        if (option == "recebidas") {
+            connection.query('SELECT `nome`, `formasDePagamento`, SUM(`preco` + `maoDeObra`) as total '
+                + 'FROM service '
+                + 'WHERE recebimento > 0 '
+                + 'GROUP BY formasDePagamento '
+                + 'ORDER BY nome', function (error, results) {
+                    if (error) throw error;
+
+                    callback(results);
+                });
+        } else if (option == "receber") {
+            connection.query('SELECT `nome`, `formasDePagamento`, SUM(`preco` + `maoDeObra`) as total '
+                + 'FROM service '
+                + 'WHERE recebimento = 0 and CURRENT_DATE <= dataDeVencimento '
+                + 'GROUP BY formasDePagamento '
+                + 'ORDER BY nome', function (error, results) {
+                    if (error) throw error
+
+                    callback(results);
+                });
+        } else if (option == "atrasadas") {
+            connection.query('SELECT `nome`, `formasDePagamento`, SUM(`preco` + `maoDeObra`) as total '
+                + 'FROM service '
+                + 'WHERE recebimento = 0 and CURRENT_DATE > dataDeVencimento '
+                + 'GROUP BY formasDePagamento '
+                + 'ORDER BY nome', function (error, results) {
+                    if (error) throw error;
+
+                    callback(results);
+                });
+        } else {
+            callback(null);
+        }
+        }
 }
 
 module.exports = servicesService;

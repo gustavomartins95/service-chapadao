@@ -29,6 +29,15 @@ var servicesConstroller = {
                 response.redirect("/failed");
             }
         });
+    },
+    relatorios: function (option, response) {
+        servicesService.reports(option, function callback (results) {
+            if (results) {
+                response.status(200).send(results);
+            } else {
+                response.sendStatus(404);
+            }
+        });
     }
 };
 

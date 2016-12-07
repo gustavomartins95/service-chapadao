@@ -26,6 +26,14 @@ module.exports = function(app) {
         servicesConstroller.deletar(id, response);
     });
 
+    app.get("/relatorios", function(request, response) {
+        response.sendFile(path + "relatorios.html");
+    });
+    app.get("/relatorios/:option", function(request, response) {
+        const option = request.params.option;
+        servicesConstroller.relatorios(option, response);
+    });
+
     app.get("/success", function(request, response) {
         response.sendFile(path + "success.html");
     });
