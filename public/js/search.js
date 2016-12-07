@@ -9,7 +9,7 @@
             });
     };
 
-function addTableRow(services) {
+    function addTableRow(services) {
         var newRow, columns, total;
 
         if (services.length === 0) {

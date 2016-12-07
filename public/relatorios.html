@@ -29,15 +29,15 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="alert alert-success text-center" role="alert"><strong>Contas recebidas</strong><br />
-                    <button class="btn btn-default">Gerar PDF</button></div>
+                    <button class="btn btn-default" onclick="optionReport('recebidas')">Gerar PDF</button></div>
                 </div>
                 <div class="col-sm-4">
                     <div class="alert alert-warning text-center" role="alert"><strong>Contas a receber</strong><br />
-                    <button class="btn btn-default">Gerar PDF</button></div>
+                    <button class="btn btn-default" onclick="optionReport('receber')">Gerar PDF</button></div>
                 </div>
                 <div class="col-sm-4">
                     <div class="alert alert-danger text-center" role="alert"><strong>Contas atrasadas</strong><br />
-                    <button class="btn btn-default">Gerar PDF</button></div>
+                    <button class="btn btn-default" onclick="optionReport('atrasadas')">Gerar PDF</button></div>
                 </div>                   
             </div>
         </div>
@@ -48,6 +48,8 @@
     </footer>
 </div>
 
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="js/report.js"></script>
 <script src="js/jspdf.debug.js"></script>
 <script src="js/jspdf.js"></script>
 
