@@ -2,7 +2,9 @@ const connection = require('../api/conexao.js');
 
 var servicesService = {
     save: function (dados, callback) {
-        connection.query('INSERT INTO `service` SET ?', [dados], function (err, result) {
+        const datas = dataDeVencimento(dados.prazoEmDias);
+
+        connection.query('INSERT INTO `service` SET ? , ?', [dados, datas], function (err, result) {
             if (err) throw err;
 
             callback(result.affectedRows);
@@ -60,7 +62,23 @@ var servicesService = {
         } else {
             callback(null);
         }
-        }
+    }
+}
+
+function dataDeVencimento (prazoEmDias) {
+    // The number of milliseconds in one day
+    // 60 * 1000 = 60.000 milisegundos que é 60 segundos
+    // 60 * (60 * 1000) = 3.600.000 milisegundos que é 60 minutos
+    // 24 * (60 * (60 * 1000)) = 86400000 milisegundos que é 1440 minutos
+    // 1440 minutos são 24 horas
+    const milliseconds =  24 * 60 * 60 * 1000;
+    const dataAtual = new Date();
+
+    // getTime() Returns the numeric value of the specified date as the number of milliseconds
+    // since January 1, 1970, 00:00:00 UTC (negative for prior times).
+    const dataDeVencimento = new Date(dataAtual.getTime() + (prazoEmDias * milliseconds));
+
+    return {dataAtual: dataAtual, dataDeVencimento: dataDeVencimento};
 }
 
 module.exports = servicesService;
