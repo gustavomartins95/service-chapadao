@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="nome">Nome:</label>
-                                <input type="text" name="nome" class="form-control" autofocus>
+                                <input type="text" name="nome" class="form-control" autofocus required>
                             </div>
 
                             <div class="form-group col-md-3">
@@ -59,12 +59,12 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="placa">Placa:</label>
-                                <input type="text" name="placa" class="form-control">
+                                <input type="text" name="placa" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="modelo">Modelo:</label>
-                                <input type="text" name="modelo" class="form-control">
+                                <input type="text" name="modelo" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-3">
@@ -81,26 +81,30 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="preco">Preço:</label>
-                                <input type="number" value="0.00" min="0" name="preco" class="form-control">
+                                <input type="number" min="0" onchange="sum()" onclick="sum()" id="inpPreco" name="preco" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="maoDeObra">Mão de Obra:</label>
-                                <input type="number" value="0.00" min="0" name="maoDeObra" class="form-control">
+                                <input type="number" min="0" onchange="sum()" onclick="sum()" id="inpMaoDeObra" name="maoDeObra" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="formasDePagamento">Formas de Pagamento:</label>
-                                <select name="formasDePagamento" class="form-control"> 
+                                <select onchange="optionSelected()" onclick="optionSelected()" id="optionFormasDePagamento" name="formasDePagamento" class="form-control" required> 
                                     <option value="Á Vista">Á Vista</option> 
                                     <option value="Boleto">Boleto</option>
                                     <option value="Cartão">Cartão</option>
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-3" id="prazo">
                                 <label for="prazoEmDias">Prazo em dias:</label>
-                                <input type="number" value="0" min="0" name="prazoEmDias" class="form-control">
+                                <input type="number" min="0" id="inpPrazo" name="prazoEmDias" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-3" id="recebimento">
+                                <label for="recebimento">Recebimento:</label>
+                                <input type="number" min="0" id="inpTotal" name="recebimento" class="form-control" required>
                             </div>
                         </div>
 
@@ -127,6 +131,9 @@
         <p>&copy; 2016</p>
     </footer>
 </div>
+
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="js/functions.js"></script>
 
 </body>
 </html>
