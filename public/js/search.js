@@ -37,9 +37,7 @@
                 columns += "<td>" + services[i].dataDeVencimento + "</td>";
 
                 columns += '<td class="actions">';
-                columns += '<a class="btn btn-success btn-xs" href="/receber/'+ services[i].id +'">Receber</a> ' 
-                         + '<a class="btn btn-primary btn-xs" href="/visualizar/'+ services[i].id +'">Visualizar</a> '
-                         + '<a class="btn btn-warning btn-xs" href="/editar/'+ services[i].id +'">Editar</a> '
+                columns += '<a class="btn btn-warning btn-xs" href="/editar/'+ services[i].id +'">Editar</a> '
                          + '<a class="btn btn-danger btn-xs" href="/deletar/'+ services[i].id +'">Excluir</a>';
                 columns += '</td>';
 
